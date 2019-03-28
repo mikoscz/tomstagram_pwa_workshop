@@ -27,7 +27,9 @@ export default Service.extend({
   },
 
   async findAll() {
-    const response =  await new Parse.Query(Post).find();
+    const response =  await new Parse.Query(Post)
+      .descending("createdAt")
+      .find();
     return response.map(object => object.attributes);
   }
 });
