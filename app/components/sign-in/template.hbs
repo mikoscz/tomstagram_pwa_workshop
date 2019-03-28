@@ -1,17 +1,17 @@
-  <form
-    class="login-form"
-    onsubmit={{action 'signIn'}}
+<form
+  class="login-form"
+  onsubmit={{action "signIn"}}
+>
+  <input
+    class="login-form__input"
+    type="text"
+    placeholder="Nickname..."
+    onchange={{action (mut username) value="target.value"}}
   >
-    <input
-      class="login-form__input"
-      type="text"
-      placeholder="Nickname..."
-      onchange={{action (mut username) value="target.value"}}
-    />
-    <button
-      class="login-form__button"
-      type="submit"
-    >
-      Sign in
-    </button>
-  </form>
+  <button
+    class="login-form__button"
+    type="submit"
+  >
+    Sign in
+  </button>
+</form>
