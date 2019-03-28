@@ -12,7 +12,7 @@ module.exports = function(environment) {
       appKey: '7HGQ5ZVUIegSHPcspezzhIePUn2gtiNCBueGheIx'
     },
     fastboot: {
-      hostWhitelist: [/^localhost:\d+$/]
+      hostWhitelist: ['tomstagrambb.herokuapp.com', /^localhost:\d+$/]
     },
     EmberENV: {
       FEATURES: {
