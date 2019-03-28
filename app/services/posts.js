@@ -24,5 +24,10 @@ export default Service.extend({
     }
 
     return model;
+  },
+
+  async findAll() {
+    const response =  await new Parse.Query(Post).find();
+    return response.map(object => object.attributes);
   }
 });
