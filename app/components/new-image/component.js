@@ -1,6 +1,7 @@
 import Component from '@ember/component';
 import { inject as service } from '@ember/service';
 import { empty } from '@ember/object/computed';
+import Compressor from 'compressor';
 
 export default Component.extend({
   tagName: '',
@@ -14,9 +15,20 @@ export default Component.extend({
   actions: {
     async loadImage(event) {
       const [file] = event.target.files
-      const image = await this._getBase64FromFile(file)
+      const setImage = (img) => this.set('image', img)
 
-      this.set('image', image);
+      new Compressor(file, {
+        quality: 0.2,
+        maxWidth: 500,
+        success(blob) {
+          const reader = new FileReader();
+          reader.readAsDataURL(blob);
+          reader.onloadend = function() {
+            const base64data = reader.result;
+            setImage(base64data)
+          }
+        }
+      });
     },
 
     async addImage() {

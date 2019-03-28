@@ -58,6 +58,7 @@
     "node": "6.* || 8.* || >= 10.*"
   },
   "dependencies": {
+    "compressorjs": "^1.0.5",
     "parse": "^2.3.0"
   }
 }

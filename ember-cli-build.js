@@ -15,6 +15,12 @@ module.exports = function(defaults) {
     ]
   });
 
+  app.import('node_modules/compressorjs/dist/compressor.common.js', {
+    using: [
+      { transformation: 'cjs', as: 'compressor' }
+    ]
+  });
+
   // Use `app.import` to add additional libraries to the generated
   // output files.
   //
