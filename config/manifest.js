@@ -12,7 +12,7 @@ module.exports = function(/* environment, appConfig */) {
     "display": "standalone",
     "orientation": "portrait",
     "Scope": "/",
-    "start_url": "/",
+    "start_url": "/auth",
     "icons": [
       {
         "src": "assets/icons/icon-72x72.png",
@@ -54,7 +54,6 @@ module.exports = function(/* environment, appConfig */) {
         "sizes": "512x512",
         "type": "image/png"
       }
-    ],
-    "splash_pages": null
+    ]
   };
 }
