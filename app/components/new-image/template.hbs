@@ -1,0 +1,41 @@
+<Header>
+  {{#link-to "index"}}
+    <Icons as |Icon|>
+      <Icon.Close />
+    </Icons>
+  {{/link-to}}
+
+  <h1 class="header__title">
+    Dodaj zdjecie
+  </h1>
+
+  <span></span>
+</Header>
+
+{{#if image}}
+  <div class="new-image-container">
+    <img class="post__image" src={{this.image}} alt="">
+  </div>
+
+  <input type="text" onchange={{action (mut this.description) value="target.value"}}>
+{{else}}
+  <main class="container__main">
+    <label for="image">
+      <Icons as |Icon|>
+        <Icon.AddImage />
+      </Icons>
+    </label>
+
+    <input
+      onchange={{action "loadImage"}}
+      class="image-input"
+      id="image"
+      type="file"
+    />
+  </main>
+{{/if}}
+
+<Footer>
+  <button disabled>Usun</button>
+  <button onclick={{action "addImage"}}>Dodaj</button>
+</Footer>
