@@ -35,12 +35,14 @@
 </main>
 
 <Footer>
-  <button
-    class="new-image__button -danger"
-    disabled={{this.imageMissing}}
-  >
-    Usun
-  </button>
+  {{#link-to 'index' class="new-image__link"}}
+    <button
+      class="new-image__button -danger"
+      disabled={{this.imageMissing}}
+    >
+      Usun
+    </button>
+  {{/link-to}}
 
   <button
     class="new-image__button"
