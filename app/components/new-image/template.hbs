@@ -12,30 +12,55 @@
   <span></span>
 </Header>
 
-{{#if image}}
-  <div class="new-image-container">
-    <img class="post__image" src={{this.image}} alt="">
-  </div>
+<main class="container__main">
+  {{#if image}}
+    <div class="new-image__container">
+      <img
+        class="post__image"
+        src={{this.image}}
+        alt=""
+      >
+    </div>
 
-  <input type="text" onchange={{action (mut this.description) value="target.value"}}>
-{{else}}
-  <main class="container__main">
-    <label for="image">
-      <Icons as |Icon|>
-        <Icon.AddImage />
-      </Icons>
-    </label>
+    <div class="new-image__description-container">
+      <textarea
+        onchange={{action (mut this.description) value="target.value"}}
+        class="new-image__description"
+        rows="5"
+        placeholder="Description..."
+      ></textarea>
+    </div>
+  {{else}}
+    <div class="new-image__centered-container">
+      <label for="image">
+        <Icons as |Icon|>
+          <Icon.AddImage class="new-image__icon"/>
+        </Icons>
+      </label>
 
-    <input
-      onchange={{action "loadImage"}}
-      class="image-input"
-      id="image"
-      type="file"
-    />
-  </main>
-{{/if}}
+      <input
+        onchange={{action "loadImage"}}
+        class="new-image__input"
+        id="image"
+        type="file"
+      />
+    </div>
+  {{/if}}
+</main>
 
 <Footer>
-  <button disabled>Usun</button>
-  <button onclick={{action "addImage"}}>Dodaj</button>
+  <button
+    class="new-image__button -danger"
+    disabled={{this.imageMissing}}
+  >
+    Usun
+  </button>
+
+  <button
+    class="new-image__button"
+    disabled={{this.imageMissing}}
+    onclick={{action "addImage"}}
+  >
+    Dodaj
+  </button>
 </Footer>

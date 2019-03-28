@@ -1,10 +1,15 @@
 import Component from '@ember/component';
 import { inject as service } from '@ember/service';
+import { empty } from '@ember/object/computed';
 
 export default Component.extend({
+  tagName: '',
+
   posts: service(),
   session: service(),
   router: service(),
+
+  imageMissing: empty('image'),
 
   actions: {
     async loadImage(event) {
