@@ -1,0 +1,10 @@
+Enter your name:
+
+<form onsubmit={{action 'signIn'}}>
+  <input
+    type="text"
+    onchange={{action (mut username) value="target.value"}}
+  />
+  <button type="submit">Sign in</button>
+</form>
+
