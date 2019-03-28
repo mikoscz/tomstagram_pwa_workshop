@@ -6,6 +6,11 @@ module.exports = function(environment) {
     environment,
     rootURL: '/',
     locationType: 'auto',
+    parse: {
+      serverURL:'https://parseapi.back4app.com',
+      appId: 'cygQZuKGaowizCH2h2LfRpXb5i3zMPqVgbY0F4kt',
+      appKey: '7HGQ5ZVUIegSHPcspezzhIePUn2gtiNCBueGheIx'
+    },
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build

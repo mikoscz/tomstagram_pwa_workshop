@@ -1,3 +1,3 @@
-import Parse from 'Parse';
+import Parse from 'parse';
 
 export default Parse.Object.extend('Post');
