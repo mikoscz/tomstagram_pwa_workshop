@@ -1,0 +1,44 @@
+<article class="post">
+  <header class="post__header">
+    <img
+      class="post__header__avatar"
+      src="https://via.placeholder.com/50"
+      alt=""
+    />
+    <strong class="post__header__username">
+      {{@post.author}}
+    </strong>
+  </header>
+
+  <div>
+    <img
+      class="post__image"
+      src={{@post.image}}
+      alt=""
+    />
+  </div>
+
+  <div class="post__content">
+    <section class="post__content__actions">
+      <Icons as |Icon|>
+        <Icon.EmptyHeart />
+      </Icons>
+    </section>
+
+    <section class="post__likes">
+      <strong>
+        {{@post.likes.length}} Likes
+      </strong>
+    </section>
+
+    <section class="post__comments">
+      {{#each @post.comments as |comment|}}
+        <strong>
+          {{comment.user}}
+        </strong>
+
+        {{comment.content}}
+      {{/each}}
+    </section>
+  </div>
+</article>

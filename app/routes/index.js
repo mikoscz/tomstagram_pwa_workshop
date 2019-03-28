@@ -6,6 +6,6 @@ export default Route.extend(Restricted, {
   posts: service(),
 
   model() {
-    return this.posts.findAll();
+    return this.posts.findAll()
   }
 });

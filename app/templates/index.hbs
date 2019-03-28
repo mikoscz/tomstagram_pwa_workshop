@@ -1,0 +1,19 @@
+<Header>
+  <img
+    class="header__logo"
+    src="assets/images/logo.png"
+    alt="Tomstagram logo"
+  />
+</Header>
+
+{{#each model as |post|}}
+  <Post @post={{post}} />
+{{/each}}
+
+<Footer>
+  {{#link-to "new"}}
+    <Icons as |Icon|>
+      <Icon.PlusSquare />
+    </Icons>
+  {{/link-to}}
+</Footer>
