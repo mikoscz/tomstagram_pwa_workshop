@@ -1,0 +1,32 @@
+@import 'vendor/normalize'
+
+@import 'base/variables'
+
+html,
+body
+  font-family: 'Helvetica Neue'
+  font-size: 14px
+  height: 100%
+
+.container__main
+  height: calc(100% - 90px)
+  display: flex
+  justify-content: center
+  align-items: center
+
+.image-input
+  display: none
+
+.input-icon
+  cursor: pointer
+  height: 300px !important
+  color: rgba(0,0,0,.0975)
+
+.new-image-container
+  height: 300px
+  overflow: hidden
+
+@import 'components/header'
+@import 'components/post'
+@import 'components/icons'
+@import 'components/footer'
