@@ -23,10 +23,10 @@ export default Component.extend({
       });
 
       if (this.description) {
-        post.comments.push({
+        post.set('comments', [{
           user: this.session.currentUser,
           content: this.description
-        });
+        }])
       }
 
       await post.save();
