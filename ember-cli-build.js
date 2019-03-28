@@ -7,6 +7,12 @@ module.exports = function(defaults) {
     // Add options here
   });
 
+  app.import('node_modules/parse/lib/browser/Parse.js', {
+    using: [
+      { transformation: 'cjs', as: 'parse' }
+    ]
+  });
+
   // Use `app.import` to add additional libraries to the generated
   // output files.
   //
