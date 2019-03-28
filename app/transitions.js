@@ -3,7 +3,7 @@ export default function(){
     this.transition(
       this.fromRoute('index'),
       this.toRoute('new'),
-      this.use('toLeft'),
-      this.reverse('toRight')
+      this.use('toLeft', { duration: 200 }),
+      this.reverse('toRight', { duration: 200 })
     );
 }
