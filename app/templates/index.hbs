@@ -6,9 +6,11 @@
   />
 </Header>
 
-{{#each model as |post|}}
-  <Post @post={{post}} />
-{{/each}}
+<main class="aaa">
+  {{#each model as |post|}}
+    <Post @post={{post}} />
+  {{/each}}
+</main>
 
 <Footer>
   {{#link-to "new"}}

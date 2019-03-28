@@ -4,6 +4,7 @@ import { inject as service } from '@ember/service';
 export default Component.extend({
   posts: service(),
   session: service(),
+  router: service(),
 
   actions: {
     async loadImage(event) {
@@ -18,12 +19,19 @@ export default Component.extend({
         author: this.session.currentUser,
         image: this.image,
         likes: [],
-        comments: [
-          { user: this.session.currentUser, content: this.description }
-        ]
+        comments: []
       });
 
-      post.save();
+      if (this.description) {
+        post.comments.push({
+          user: this.session.currentUser,
+          content: this.description
+        });
+      }
+
+      await post.save();
+
+      this.router.transitionTo('index');
     }
   },
 
