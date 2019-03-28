@@ -4,7 +4,9 @@ const EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
 module.exports = function(defaults) {
   let app = new EmberApp(defaults, {
-    // Add options here
+    sassOptions: {
+      extension: 'sass'
+    }
   });
 
   app.import('node_modules/parse/lib/browser/Parse.js', {
