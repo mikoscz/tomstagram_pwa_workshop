@@ -30,6 +30,7 @@ export default Service.extend({
     const response =  await new Parse.Query(Post)
       .descending("createdAt")
       .find();
-    return response.map(object => object.attributes);
+    return response
+    // .map(object => object.attributes);
   }
 });

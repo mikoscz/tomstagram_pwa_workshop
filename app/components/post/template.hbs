@@ -6,33 +6,49 @@
       alt=""
     />
     <strong class="post__header__username">
-      {{@post.author}}
+      {{@post.attributes.author}}
     </strong>
   </header>
 
   <div>
     <img
       class="post__image"
-      src={{@post.image}}
+      src={{@post.attributes.image}}
       alt=""
     />
   </div>
 
   <div class="post__content">
     <section class="post__content__actions">
-      <Icons as |Icon|>
-        <Icon.EmptyHeart />
-      </Icons>
+      {{#if liked}}
+        <span
+          role="button"
+          onclick={{action "dislike"}}
+        >
+          <Icons as |Icon|>
+            <Icon.FullHeart />
+          </Icons>
+        </span>
+      {{else}}
+        <span
+          role="button"
+          onclick={{action "like"}}
+        >
+          <Icons as |Icon|>
+            <Icon.EmptyHeart />
+          </Icons>
+        </span>
+      {{/if}}
     </section>
 
     <section class="post__likes">
       <strong>
-        {{@post.likes.length}} Likes
+        {{likesCount}} Likes
       </strong>
     </section>
 
     <section class="post__comments">
-      {{#each @post.comments as |comment|}}
+      {{#each @post.attributes.comments as |comment|}}
         <strong>
           {{comment.user}}
         </strong>
