@@ -1,13 +1,20 @@
-<Header>
-  {{#link-to "index" class="header__button"}}
-    <Icons as |Icon|>
-      <Icon.Close />
-    </Icons>
-  {{/link-to}}
+<Gestures
+  class="container"
+  @gesture="panright"
+  @action={{action (transition-to "index")}}
+>
 
-  <h1 class="header__title">
-    Dodaj zdjecie
-  </h1>
-</Header>
+  <Header>
+    {{#link-to "index" class="header__button"}}
+      <Icons as |Icon|>
+        <Icon.Close />
+      </Icons>
+    {{/link-to}}
 
-<NewImage />
+    <h1 class="header__title">
+      Dodaj zdjecie
+    </h1>
+  </Header>
+
+  <NewImage />
+</Gestures>

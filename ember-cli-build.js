@@ -21,6 +21,12 @@ module.exports = function(defaults) {
     ]
   });
 
+  app.import('node_modules/hammerjs/hammer.min.js', {
+    using: [
+      { transformation: 'cjs', as: 'hammer' }
+    ]
+  });
+
   // Use `app.import` to add additional libraries to the generated
   // output files.
   //
