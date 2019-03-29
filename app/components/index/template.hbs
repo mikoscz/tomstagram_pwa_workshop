@@ -1,0 +1,41 @@
+<Gestures
+  class="container"
+  @gesture="panleft"
+  @action={{action (transition-to "new")}}
+>
+  <Header>
+    <img
+      class="header__logo"
+      src="assets/images/logo.png"
+      alt="Tomstagram logo"
+    >
+    <span
+      role="button"
+      onclick={{action "signOut"}}
+    >
+      <Icons as |Icon|>
+        <Icon.Exit
+          class="header__button -right"
+        />
+      </Icons>
+    </span>
+  </Header>
+
+  <main class="container__main">
+    {{#if @model.posts.isSettled}}
+      {{#each @model.posts.content as |post|}}
+        <Post @post={{post}} />
+      {{/each}}
+    {{else}}
+      <PostsPlaceholder />
+    {{/if}}
+  </main>
+
+  <Footer>
+    {{#link-to "new"}}
+      <Icons as |Icon|>
+        <Icon.PlusSquare />
+      </Icons>
+    {{/link-to}}
+  </Footer>
+</Gestures>

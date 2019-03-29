@@ -3,6 +3,7 @@ import { reads } from '@ember/object/computed';
 
 export default Service.extend({
   fastboot: service(),
+  router: service(),
   isFastBoot: reads('fastboot.isFastBoot'),
 
   init() {
@@ -32,5 +33,6 @@ export default Service.extend({
     }
 
     this.set('currentUser', null);
+    this.router.transitionTo('auth');
   }
 });
