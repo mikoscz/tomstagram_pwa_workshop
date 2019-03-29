@@ -9,7 +9,7 @@ export default Component.extend({
       .get( 'pan' )
       .set({
         direction: Hammer.DIRECTION_HORIZONTAL,
-        threshold: 200
+        threshold: 300
       })
 
     hammertime.on(this.gesture, () => {
