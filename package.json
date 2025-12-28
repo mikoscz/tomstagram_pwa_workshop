@@ -63,6 +63,6 @@
   "dependencies": {
     "compressorjs": "^1.0.5",
     "hammerjs": "^2.0.8",
-    "parse": "^2.3.0"
+    "parse": "^7.0.0"
   }
 }
